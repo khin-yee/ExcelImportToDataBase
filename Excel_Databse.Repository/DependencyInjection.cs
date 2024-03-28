@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,8 @@ namespace Excel_Databse.Repository
     {
         public  static IServiceCollection AddDapperService(this IServiceCollection service)
         {
-            service.AddScoped<IDbConnection>((sp)=>new NpgsqlConnection("Host=localhost;Port= 5432;User ID=postgres;Password=762000;Database=TestDatabase"));
-            service.AddScoped<IRepository, Repository>();
+            service.AddScoped<IDbConnection>((sp) => new NpgsqlConnection("Host=localhost;Port= 5432;User ID=postgres;Password=762000;Database=TestDatabase"));
+            service.AddScoped<IRepository, DBExcelRepository>();
             return service;
         }
     }

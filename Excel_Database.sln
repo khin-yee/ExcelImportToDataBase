@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Excel_Database", "Excel_Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Excel_Database.Domain", "Excel_Database.Domain\Excel_Database.Domain.csproj", "{9984A42C-3E16-4B39-963C-778CB0DEAF43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excel_Databse.Repository", "Excel_Databse.Repository\Excel_Databse.Repository.csproj", "{E8A28157-6275-4BB5-BBB0-673E657571E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Excel_Databse.Repository", "Excel_Databse.Repository\Excel_Databse.Repository.csproj", "{E8A28157-6275-4BB5-BBB0-673E657571E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excel_Databse.Service", "Excel_Databse.Service\Excel_Databse.Service.csproj", "{2B76CCA7-825A-4ADB-9269-DA0E786BABC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{E8A28157-6275-4BB5-BBB0-673E657571E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8A28157-6275-4BB5-BBB0-673E657571E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8A28157-6275-4BB5-BBB0-673E657571E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B76CCA7-825A-4ADB-9269-DA0E786BABC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B76CCA7-825A-4ADB-9269-DA0E786BABC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B76CCA7-825A-4ADB-9269-DA0E786BABC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B76CCA7-825A-4ADB-9269-DA0E786BABC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

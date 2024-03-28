@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Excel_Database.Domain.Interface
 {
-    public  interface IRepository
+    public interface IDBService
     {
-        public  Task ImportExcelData(IFormFile file, string tablename);
+        public Task ImportExcelData(IFormFile file, string tablename);
+
     }
 }
