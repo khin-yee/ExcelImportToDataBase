@@ -1,4 +1,5 @@
 ﻿using Excel_Database.Domain.Interface;
+using Excel_Database.Domain.Model;
 using Microsoft.AspNetCore.Http;
 using Npgsql;
 using NPOI.SS.UserModel;
@@ -15,19 +16,26 @@ namespace Excel_Databse.Repository
         {
             _connection = connection;
         }
-        public async  Task  ImportExcelData(IFormFile file, string tablename)
+        public  Response  ImportExcelData(IFormFile file, string tablename)
         {
+            Response res = new Response();
             try
             {
 
                 if (file == null || file.Length == 0)
                 {
-                 
+                    res.ErrorMessage = "This file is empty";
+                    res.ErrorCode = "01";
                 }
                 using var stream = file.OpenReadStream();
                 IWorkbook workbook = new XSSFWorkbook(stream);
                 ISheet sheet = workbook.GetSheetAt(0);
-
+                if(sheet.ActiveCell == null)
+                {
+                    res.ErrorMessage = "This file has no data";
+                    res.ErrorCode = "01";
+                    return res;
+                }
                 _connection.Open();
 
                 // Check if the _connection is open
@@ -89,14 +97,17 @@ namespace Excel_Databse.Repository
                     }
                     using var insertcommand = new NpgsqlCommand(insertquery, (NpgsqlConnection?)_connection);
                     insertcommand.ExecuteNonQuery();
-                   
+                    return res;
                 }
   
             }
             catch (Exception ex)
             {
-              
+                res.ErrorMessage = ex.Message;
+                res.ErrorCode = "01";
+                return res;
             }
+            return res;
         }
 
     }

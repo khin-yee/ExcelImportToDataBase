@@ -1,4 +1,5 @@
 ﻿using Excel_Database.Domain.Interface;
+using Excel_Database.Domain.Model;
 using Excel_Databse.Repository;
 using Microsoft.AspNetCore.Http;
 using System.Reflection.Metadata.Ecma335;
@@ -15,9 +16,10 @@ namespace Excel_Databse.Service
             _repo = repo;
         }
 
-        public async Task ImportExcelData(IFormFile filestring ,string tablename)
+        public async Task<Response> ImportExcelData(IFormFile filestring ,string tablename)
         {
-            await _repo.ImportExcelData(filestring, tablename);
+            Response res =  _repo.ImportExcelData(filestring, tablename);
+            return res;            
         }
     }
 }

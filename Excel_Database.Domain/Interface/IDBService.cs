@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Excel_Database.Domain.Model;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Excel_Database.Domain.Interface
 {
     public interface IDBService
     {
-        public Task ImportExcelData(IFormFile file, string tablename);
+        public Task<Response> ImportExcelData(IFormFile file, string tablename);
 
     }
 }

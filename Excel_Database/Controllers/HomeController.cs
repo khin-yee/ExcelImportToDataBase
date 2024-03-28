@@ -27,9 +27,13 @@ namespace Excel_Database.Controllers
         [HttpPost("Excelimport")]
         public async Task<Object> ImportExcelData(IFormFile file,string tablename)
         {
-            await _service.ImportExcelData(file, tablename);
-            return  Ok("Data Imported");
-            
+            var res=  await _service.ImportExcelData(file, tablename);
+            if (res.ErrorCode == "00")
+            {
+                return Ok("Data Imported successfully");
+            }
+            else
+                return res.ErrorMessage;
         }
     }
 }
