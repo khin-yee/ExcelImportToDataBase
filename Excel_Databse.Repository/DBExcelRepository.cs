@@ -47,8 +47,7 @@ namespace Excel_Databse.Repository
                     IRow row = sheet.GetRow(0);
                     for (int i = 0; i < row.Cells.Count; i++)
                     {
-                        string columnValue = row.GetCell(i)?.ToString();
-
+                        string columnValue = row.GetCell(i)?.ToString();                       
                         createTableQuery += $", \"{columnValue}\"  VARCHAR(100)";
                         if (i == 0)
                         {
