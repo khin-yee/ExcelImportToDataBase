@@ -30,7 +30,7 @@ namespace Excel_Database.Controllers
             var res=  await _service.ImportExcelData(file, tablename);
             if (res.ErrorCode == "00")
             {
-                return Ok("Data Imported successfully");
+                return Ok("Data Imported successfully To Database !");
             }
             else
                 return res.ErrorMessage;
